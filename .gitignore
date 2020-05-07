@@ -42,5 +42,4 @@ node_modules
 typings
 
 # project folders
-lib*
 target
