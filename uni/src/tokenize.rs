@@ -1,5 +1,5 @@
 pub enum Token {
-
+  Comment()
   type: string,
   start: u32,
   end: u32
