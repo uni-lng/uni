@@ -66,14 +66,27 @@ pub fn add(x: int, y: int) { (x + y) as int }
 [1, 2].map(fn (x: int) (x * 2) as int)
 
 // indentation
-[1, 2].map(fn (x)
-  x * 2)
-[1, 2].map(fn (x: int)
-  x * 2)
-[1, 2].map(fn (x: int): int
-  x * 2)
-[1, 2].map(fn (x: int)
-  (x * 2) as int)
+[1, 2].map(
+  fn (x)
+    x * 2
+)
+[1, 2].map(
+  fn (x: int)
+    x * 2
+)
+[1, 2].map(
+  fn (x: int): int
+    x * 2
+)
+[1, 2].map(
+  fn (x: int)
+    (x * 2) as int)
+[
+  fn (x)
+    x * 2,
+  fn (x)
+    x + 2
+]
 ```
 
 With decorator:
@@ -110,6 +123,10 @@ pub fn inc(&ctx) ctx.v += 1
 // indentation
 pub fn inc(&ctx)
   ctx.v += 1
+
+const counter = {
+  inc: inc{this}
+}
 ```
 
 ```uni
