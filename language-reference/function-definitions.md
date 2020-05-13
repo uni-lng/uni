@@ -221,7 +221,7 @@ struct Counter
   pub fn new(): Counter
     { count: 0 }
   pub fn new()
-    {count: 0} as Counter
+    { count: 0 } as Counter
 
   @log
   pub fn inc(&mut ctx: Counter)
