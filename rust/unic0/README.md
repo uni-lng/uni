@@ -13,3 +13,9 @@ unic0 uni/unic1
 ```
 
 It will produce `unic1` as `uni/unic1/bin/unic1`
+
+## Responsiblities
+
+- parse user input when user executes `unic`.
+- produce a partial `CompilerOptions` to be used in the `...`.
+- provide external dependencies such as `FileSystem` and `UI` to the application.

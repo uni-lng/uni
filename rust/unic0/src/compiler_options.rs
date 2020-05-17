@@ -2,25 +2,16 @@ use clap::ArgMatches;
 
 #[derive(Debug)]
 pub struct CompilerOptions {
+  pub cwd: String,
   pub files: Vec<String>,
 }
 
 impl CompilerOptions {
-  pub fn from_arg_matches(_matches: &ArgMatches) -> Self {
-    CompilerOptions { files: Vec::new() }
-  }
-}
-
-#[cfg(test)]
-mod tests {
-  use super::*;
-
-  #[test]
-  fn empty_args_ok() {
-    let matches = ArgMatches::default();
-
-    let co = CompilerOptions::from_arg_matches(&matches);
-
-    assert_eq!(0, co.files.len());
+  pub fn from_arg_matches(matches: &ArgMatches) -> Self {
+    let folder = matches.value_of("folder").unwrap();
+    CompilerOptions {
+      cwd: String::from(folder),
+      files: vec![String::from("src/main.uni")],
+    }
   }
 }

@@ -7,8 +7,8 @@ pub fn main() {
   let matches = clap_app!(myapp =>
     (version: "0.1")
     (author: "Homa wong <homawong@gmail.com>")
-    (about: "Uni compiler")
-    (@arg files: ... "file(s) to compile")
+    (about: "Uni stage 0 compiler")
+    (@arg folder: +required "path to the unic0 project folder")
   )
   .get_matches();
 
