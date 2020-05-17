@@ -1,4 +1,5 @@
 [workspace]
 members = [
+  "modules/unic0",
   "modules/libunic_parse"
 ]

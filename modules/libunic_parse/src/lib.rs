@@ -17,4 +17,4 @@
 //! Things to check in the future:
 //! - TypeScript tsbuildinfo
 
-pub mod cursor;
+mod cursor;
