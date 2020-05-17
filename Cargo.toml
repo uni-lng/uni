@@ -1,5 +1,6 @@
 [workspace]
 members = [
   "rust/unic0",
+  "rust/libunic_compiler",
   "rust/libunic_parse"
 ]
