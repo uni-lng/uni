@@ -3,6 +3,7 @@
 How to create programming language
 
 - <https://tomassetti.me/how-to-create-programming-language/>
+- <https://en.wikipedia.org/wiki/Bootstrapping_(compilers)>
 
 Type Theory
 
