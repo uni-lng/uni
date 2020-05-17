@@ -1,5 +1,5 @@
 [workspace]
 members = [
-  "modules/unic0",
-  "modules/libunic_parse"
+  "rust/unic0",
+  "rust/libunic_parse"
 ]

@@ -20,7 +20,7 @@ Rust gets a lot of things right.
 Its ownership concept makes so much sense that makes you wonder why other languages have garbage collection.
 It also have a very powerful macro allows you to make the language much easier to write.
 
-But nominal type is its most glaring shortcoming IMO.
+But nominal type is its most glaring shortcoming.
 It makes the code unnecessary cumbersome and creates difficult roadblocks when it comes to design and architecture.
 
 Uni is targeted to be a system level language just like Rust,
