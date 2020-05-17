@@ -12,6 +12,7 @@ some design and language features are skipped:
 
 - no cross-platform support. Only compiles to x86
 - no optimization
+- ignore comments
 - minimal compiler options
   - not sure if this fit into this list
 - no dependency injection
@@ -19,7 +20,7 @@ some design and language features are skipped:
 - (maybe) no structural type
   - no type reduction
 - (maybe) no incremental build
-  - no memory balancing
+  - no memory balancing (useful only to language service)
 
 ## Usage
 
