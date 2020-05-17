@@ -63,3 +63,14 @@ Traits unique to Uni:
 - explicit syntax enables strong IDE support
 - compiler engine is available during test
   - allow test to create isolated execution scope for dependency injection
+
+## Module Organization
+
+The `std` library is modeled after NodeJS instead of Rust.
+One of the main differences is that they are different modules.
+This way, it is more flexible and `unic0` only needs to build some of the key modules required to build `unic`.
+Meaning other modules can be written with better syntax.
+
+- <https://nodejs.org/api/http.html>
+- <https://github.com/denoland/deno/tree/master/std>
+- <https://github.com/rust-lang/rust/tree/master/src/libstd>
