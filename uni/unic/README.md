@@ -2,7 +2,7 @@
 
 Uni compiler.
 
-## Responsiblities
+## Responsibilities
 
 - parse user input when user executes `unic`.
 - produce a partial `CompilerOptions` to be used in the `...`.

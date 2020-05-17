@@ -2,10 +2,26 @@
 
 `unic0` is a stage 0 Uni compiler written in Rust.
 
-It's sole purpose is to compile `unic1`: stage 1 Uni compiler written in Uni.
+It is used to build:
 
-It targets only x86.
-Cross compilation is handled by `unic`, the actual compiler.
+- stage 1 Uni compiler from the source code in `uni\unic`.
+- build tools necessary to build the compiler.
+
+In order to spend more time dogfooding in Uni directly,
+some design and language features are skipped:
+
+- no cross-platform support. Only compiles to x86
+- no optimization
+- minimal compiler options
+  - not sure if this fit into this list
+- no dependency injection
+  - can be avoided as we will not build tests
+- (maybe) no structural type
+  - no type reduction
+- (maybe) no incremental build
+  - no memory balancing
+
+## Usage
 
 ```sh
 # unic0 <folder>
@@ -14,8 +30,8 @@ unic0 uni/unic1
 
 It will produce `unic1` as `uni/unic1/bin/unic1`
 
-## Responsiblities
+## Responsibilities
 
-- parse user input when user executes `unic`.
+- parse user input when user executes `unic0`.
 - produce a partial `CompilerOptions` to be used in the `...`.
 - provide external dependencies such as `FileSystem` and `UI` to the application.
