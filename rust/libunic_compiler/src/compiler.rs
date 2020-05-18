@@ -6,8 +6,8 @@ pub struct Compiler<'a> {
   pub cwd: &'a str,
   pub options: CompilerOptions,
   files: Vec<String>,
-  main: Option<&'a str>,
-  lib: Option<&'a str>,
+  main_index: Option<usize>,
+  lib_index: Option<usize>,
 }
 
 impl<'a> Compiler<'a> {
@@ -16,28 +16,42 @@ impl<'a> Compiler<'a> {
       cwd,
       options,
       files: Vec::new(),
-      main: None,
-      lib: None,
+      main_index: None,
+      lib_index: None,
     }
   }
+
   pub fn compile(&mut self) -> Result<(), std::io::Error> {
-    self.files.push(format!("{}/{}", self.cwd, "src/main.uni"));
     self.files = discover_source_files(self.cwd)?;
     self.identify_entry_points();
+    if self.main_index.is_some() {
+      self.compile_binary();
+    }
     Ok(())
   }
+
   fn identify_entry_points(&mut self) {
     let main = format!("{}/{}", self.cwd, "src/main.uni");
     let lib = format!("{}/{}", self.cwd, "src/lib.uni");
-    for file in &self.files {
+
+    let mut found = 0;
+    for (i, file) in self.files.iter().enumerate() {
       if *file == main {
-        println!("has main");
-        // self.main = Some(&file[..]);
+        self.main_index = Some(i);
+        found += 1;
       }
       if *file == lib {
-        println!("has lib");
+        self.lib_index = Some(i);
+        found += 1;
+      }
+      if found == 2 {
+        break;
       }
     }
+  }
+
+  fn compile_binary(&mut self) {
+    
   }
 }
 
