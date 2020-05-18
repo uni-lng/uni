@@ -7,4 +7,7 @@ edition = '2018'
 [dependencies.libunic_fs]
 path = '../libunic_fs'
 
+[dependencies.libunic_compile_session]
+path = '../libunic_compile_session'
+
 [dev-dependencies]

@@ -1,5 +1,6 @@
 use crate::compiler_options::CompilerOptions;
 
+use libunic_compile_session::CompileSession;
 use libunic_fs::discover_source_files;
 use std::io;
 
@@ -7,9 +8,7 @@ use std::io;
 pub struct Compiler<'a> {
   pub cwd: &'a str,
   pub options: CompilerOptions,
-  files: Vec<String>,
-  main_index: Option<usize>,
-  lib_index: Option<usize>,
+  session: CompileSession,
 }
 
 impl<'a> Compiler<'a> {
@@ -17,19 +16,17 @@ impl<'a> Compiler<'a> {
     Compiler {
       cwd,
       options,
-      files: Vec::new(),
-      main_index: None,
-      lib_index: None,
+      session: CompileSession::new(),
     }
   }
 
   pub fn compile(&mut self) -> Result<(), io::Error> {
     self.update_files()?;
-    // self.update_ast()
-    self.identify_entry_points();
-    if self.main_index.is_some() {
-      self.compile_binary()?;
-    }
+    // self.update_ast();
+    // let entryPoints = self.identify_entry_points();
+    // if self.main_index.is_some() {
+    //   self.compile_binary()?;
+    // }
     Ok(())
   }
   /**
@@ -39,33 +36,33 @@ impl<'a> Compiler<'a> {
    * so that tokens for those files will be rebuilt.
    */
   fn update_files(&mut self) -> Result<(), io::Error> {
-    self.files = discover_source_files(self.cwd)?;
+    self.session.update_files(discover_source_files(self.cwd)?);
     Ok(())
   }
 
-  fn identify_entry_points(&mut self) {
-    let main = format!("{}/{}", self.cwd, "src/main.uni");
-    let lib = format!("{}/{}", self.cwd, "src/lib.uni");
+  // fn identify_entry_points(&mut self) {
+  //   let main = format!("{}/{}", self.cwd, "src/main.uni");
+  //   let lib = format!("{}/{}", self.cwd, "src/lib.uni");
 
-    let mut found = 0;
-    for (i, file) in self.files.iter().enumerate() {
-      if *file == main {
-        self.main_index = Some(i);
-        found += 1;
-      }
-      if *file == lib {
-        self.lib_index = Some(i);
-        found += 1;
-      }
-      if found == 2 {
-        break;
-      }
-    }
-  }
+  //   let mut found = 0;
+  //   for (i, file) in self.session.files.iter().enumerate() {
+  //     if *file == main {
+  //       self.main_index = Some(i);
+  //       found += 1;
+  //     }
+  //     if *file == lib {
+  //       self.lib_index = Some(i);
+  //       found += 1;
+  //     }
+  //     if found == 2 {
+  //       break;
+  //     }
+  //   }
+  // }
 
-  fn compile_binary(&mut self) -> Result<(), io::Error> {
-    Ok(())
-  }
+  // fn compile_binary(&mut self) -> Result<(), io::Error> {
+  //   Ok(())
+  // }
 }
 
 #[cfg(test)]
