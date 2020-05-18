@@ -19,7 +19,7 @@ fn try_discover_source_files_recur(files: &mut Vec<String>, dir: &str) -> Result
     let path = dir_result?.path();
     let p = path.to_str().unwrap();
     if path.is_dir() {
-      discover_source_files_recur(files, p);
+      try_discover_source_files_recur(files, p)?;
     } else {
       files.push(String::from(p))
     }
