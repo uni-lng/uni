@@ -10,6 +10,10 @@ It is used to build:
 In order to spend more time dogfooding in Uni directly,
 some design and language features are skipped:
 
+- no support to compile a single file
+- only support fixed entry points
+  - `main.uni`
+  - `lib.uni`
 - no cross-platform support. Only compiles to x86
 - no optimization
 - ignore comments

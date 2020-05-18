@@ -74,3 +74,10 @@ Meaning other modules can be written with better syntax.
 - <https://nodejs.org/api/http.html>
 - <https://github.com/denoland/deno/tree/master/std>
 - <https://github.com/rust-lang/rust/tree/master/src/libstd>
+
+## Testing
+
+```sh
+# watch test a specific package
+cargo watch -x "test -p libunic_compiler -- --nocapture"
+```
