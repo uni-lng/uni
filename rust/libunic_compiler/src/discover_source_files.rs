@@ -6,35 +6,26 @@ pub fn discover_source_files(cwd: &str) -> Result<Vec<String>, io::Error> {
   src.push_str("/src");
 
   let mut files = Vec::new();
-
   discover_source_files_recur(&mut files, &src);
   Ok(files)
 }
 
 fn discover_source_files_recur(files: &mut Vec<String>, dir: &str) {
-  match fs::read_dir(dir) {
-    Ok(result) => {
-      for dir_result in result {
-        match dir_result {
-          Ok(entry) => {
-            let path = entry.path();
-            match path.to_str() {
-              Some(p) => {
-                if path.is_dir() {
-                  discover_source_files_recur(files, p);
-                } else {
-                  files.push(String::from(p))
-                }
-              }
-              None => continue,
-            }
-          }
-          Err(_) => continue,
-        }
-      }
+  try_discover_source_files_recur(files, dir).unwrap_or(())
+}
+
+fn try_discover_source_files_recur(files: &mut Vec<String>, dir: &str) -> Result<(), io::Error> {
+  for dir_result in fs::read_dir(dir)? {
+    let path = dir_result?.path();
+    let p = path.to_str().unwrap();
+    if path.is_dir() {
+      discover_source_files_recur(files, p);
+    } else {
+      files.push(String::from(p))
     }
-    Err(_) => return,
   }
+
+  Ok(())
 }
 
 #[cfg(test)]
