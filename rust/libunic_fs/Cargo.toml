@@ -1,10 +1,10 @@
 [package]
-name = 'libunic_compiler'
+name = 'libunic_fs'
 version = '0.1.0'
 authors = ['Homa Wong <homawong@gmail.com>']
 edition = '2018'
 
-[dependencies.libunic_fs]
-path = '../libunic_fs'
+[dependencies]
+anyhow = '1'
 
 [dev-dependencies]

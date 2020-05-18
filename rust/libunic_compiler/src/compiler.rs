@@ -1,5 +1,7 @@
 use crate::compiler_options::CompilerOptions;
-use crate::discover_source_files::discover_source_files;
+
+use libunic_fs::discover_source_files;
+use std::io;
 
 #[derive(Debug)]
 pub struct Compiler<'a> {
@@ -21,12 +23,23 @@ impl<'a> Compiler<'a> {
     }
   }
 
-  pub fn compile(&mut self) -> Result<(), std::io::Error> {
-    self.files = discover_source_files(self.cwd)?;
+  pub fn compile(&mut self) -> Result<(), io::Error> {
+    self.update_files()?;
+    // self.update_ast()
     self.identify_entry_points();
     if self.main_index.is_some() {
-      self.compile_binary();
+      self.compile_binary()?;
     }
+    Ok(())
+  }
+  /**
+   * In the real unic,
+   * this method will discover all source files,
+   * compare and invalidate any changes (add,change,delete),
+   * so that tokens for those files will be rebuilt.
+   */
+  fn update_files(&mut self) -> Result<(), io::Error> {
+    self.files = discover_source_files(self.cwd)?;
     Ok(())
   }
 
@@ -50,8 +63,8 @@ impl<'a> Compiler<'a> {
     }
   }
 
-  fn compile_binary(&mut self) {
-    
+  fn compile_binary(&mut self) -> Result<(), io::Error> {
+    Ok(())
   }
 }
 

@@ -81,3 +81,8 @@ Meaning other modules can be written with better syntax.
 # watch test a specific package
 cargo watch -x "test -p libunic_compiler -- --nocapture"
 ```
+
+## Recommended setup
+
+- <https://github.com/rust-lang/rust-clippy>
+- <https://github.com/xd009642/tarpaulin>
