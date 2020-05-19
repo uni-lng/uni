@@ -20,10 +20,7 @@ fn discover_source_files_recur(files: &mut Vec<SourceFile>, dir: &str) -> Result
     if path.is_dir() {
       discover_source_files_recur(files, p)?;
     } else {
-      files.push(SourceFile {
-        path: String::from(p),
-        modified,
-      })
+      files.push(SourceFile::new(p, modified));
     }
   }
 
