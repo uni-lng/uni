@@ -22,6 +22,7 @@ impl CompileSession {
    * This can be break off to be handled by multiple threads.
    */
   pub fn build_asts(&mut self) {
+    
     // check each file to see if it is already parsed.
     // parse each file to AST.
     // capture any invalid token for error reporting
