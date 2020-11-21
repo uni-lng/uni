@@ -6,6 +6,7 @@ edition = '2018'
 
 [dependencies]
 anyhow = '1'
+path-slash = '0'
 
 [dependencies.libunic_compile_session]
 path = '../libunic_compile_session'

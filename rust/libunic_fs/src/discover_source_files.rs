@@ -28,15 +28,21 @@ fn discover_source_files_recur(files: &mut Vec<SourceFile>, dir: &str) -> Result
 }
 
 #[cfg(test)]
+
 mod tests {
   use super::*;
+  use path_slash::PathExt;
+  use std::path::Path;
 
   #[test]
   fn with_single_file() {
     match discover_source_files("fixtures/binary_single_file") {
       Ok(files) => {
         assert_eq!(1, files.len());
-        assert_eq!("fixtures/binary_single_file/src/main.uni", files[0].path)
+        assert_eq!(
+          "fixtures/binary_single_file/src/main.uni",
+          Path::new(&files[0].path).to_slash().unwrap()
+        );
       }
       _ => assert!(false, "failed"),
     }
@@ -47,8 +53,14 @@ mod tests {
     match discover_source_files("fixtures/binary_multi_files") {
       Ok(files) => {
         assert_eq!(2, files.len());
-        assert_eq!("fixtures/binary_multi_files/src/foo.uni", files[0].path);
-        assert_eq!("fixtures/binary_multi_files/src/main.uni", files[1].path);
+        assert_eq!(
+          "fixtures/binary_multi_files/src/foo.uni",
+          Path::new(&files[0].path).to_slash().unwrap()
+        );
+        assert_eq!(
+          "fixtures/binary_multi_files/src/main.uni",
+          Path::new(&files[1].path).to_slash().unwrap()
+        );
       }
       _ => assert!(false, "failed"),
     }
@@ -59,8 +71,15 @@ mod tests {
     match discover_source_files("fixtures/binary_sub_folder") {
       Ok(files) => {
         assert_eq!(2, files.len());
-        assert_eq!("fixtures/binary_sub_folder/src/sub/mod.uni", files[0].path);
-        assert_eq!("fixtures/binary_sub_folder/src/main.uni", files[1].path);
+        let sorted: Vec<String> = files.iter().map(|x| x.path.to_string()).collect();
+        assert_eq!(
+          "fixtures/binary_sub_folder/src/main.uni",
+          Path::new(&sorted[0]).to_slash().unwrap()
+        );
+        assert_eq!(
+          "fixtures/binary_sub_folder/src/sub/mod.uni",
+          Path::new(&sorted[1]).to_slash().unwrap()
+        );
       }
       _ => assert!(false, "failed"),
     }

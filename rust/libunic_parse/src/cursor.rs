@@ -1,7 +1,3 @@
-//!
-//!
-//!
-
 use std::str::Chars;
 
 pub(crate) const EOF_CHAR: char = '\0';
