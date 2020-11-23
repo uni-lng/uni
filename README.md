@@ -1,15 +1,15 @@
-# uni
+# Just [Code]
 
-Uni is an experimental language.
+`Just` is a general purpose programming language.
 
-I tries to combine the best parts of the languages I used over the years.
-These languages include:
+Key highlights:
 
-- TypeScript
-- JavaScript
-- Rust
-- Go
-- C#
+- compile to native assembly, no runtime or garbage collector
+- statically typed with native support of structural and nominal type
+- complete type-level programming
+- tool first, with battery included
+
+It is heavily influenced by Rust and TypeScript.
 
 ## Design Goals
 
@@ -57,7 +57,7 @@ Traits it gets from TypeScript:
 - syntax in TypeScript and JavaScript
   - generics
 
-Traits unique to Uni:
+Traits unique to `Just`:
 
 - set theory type composition
 - explicit syntax enables strong IDE support

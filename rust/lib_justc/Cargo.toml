@@ -1,0 +1,13 @@
+[package]
+name = 'lib_justc'
+version = '0.1.0'
+authors = ['Homa Wong <homawong@gmail.com>']
+edition = '2018'
+
+[dependencies.libunic_fs]
+path = '../libunic_fs'
+
+[dependencies.libunic_compile_session]
+path = '../libunic_compile_session'
+
+[dev-dependencies]

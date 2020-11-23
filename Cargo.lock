@@ -10,12 +10,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "anyhow"
-version = "1.0.31"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "85bb70cc08ec97ca5450e6eba421deeea5f172c0fc61f78b5357b2a8e8be195f"
-
-[[package]]
 name = "assert_cmd"
 version = "1.0.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -138,6 +132,16 @@ dependencies = [
 ]
 
 [[package]]
+name = "justc0"
+version = "0.1.0"
+dependencies = [
+ "assert_cmd",
+ "clap",
+ "galvanic-assert",
+ "predicates",
+]
+
+[[package]]
 name = "lazy_static"
 version = "1.4.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -148,27 +152,6 @@ name = "libc"
 version = "0.2.70"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "3baa92041a6fec78c687fa0cc2b3fae8884f743d672cf551bed1d6dac6988d0f"
-
-[[package]]
-name = "libunic_compile_session"
-version = "0.1.0"
-
-[[package]]
-name = "libunic_compiler"
-version = "0.1.0"
-dependencies = [
- "libunic_compile_session",
- "libunic_fs",
-]
-
-[[package]]
-name = "libunic_fs"
-version = "0.1.0"
-dependencies = [
- "anyhow",
- "libunic_compile_session",
- "path-slash",
-]
 
 [[package]]
 name = "memchr"
@@ -196,12 +179,6 @@ name = "os_str_bytes"
 version = "2.3.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "06de47b848347d8c4c94219ad8ecd35eb90231704b067e67e6ae2e36ee023510"
-
-[[package]]
-name = "path-slash"
-version = "0.1.3"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "ff65715a17cba8979903db6294baef56c5d39e05c8b054cffa31e69e61f24c68"
 
 [[package]]
 name = "predicates"
@@ -354,23 +331,6 @@ name = "treeline"
 version = "0.1.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "a7f741b240f1a48843f9b8e0444fb55fb2a4ff67293b50a9179dfd5ea67f8d41"
-
-[[package]]
-name = "unic0"
-version = "0.1.0"
-dependencies = [
- "assert_cmd",
- "clap",
- "galvanic-assert",
- "predicates",
-]
-
-[[package]]
-name = "unic_lexer"
-version = "0.1.0"
-dependencies = [
- "unicode-xid",
-]
 
 [[package]]
 name = "unicode-segmentation"
