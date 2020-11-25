@@ -10,12 +10,38 @@ Consideration:
   - it leads to many conflicts and confusions
 - provide a good organization for functions
   - namespace is a must in functional programming
+- function expression over function declaration
+  - function declaration can't be inlined in param position
 
 ```ebnf
 fn = [decorators]
 ```
 
 Pure function at top level:
+
+```rust
+pub fn add(x: i32, y: i32) {
+  x + y
+}
+```
+
+```just
+pub let add = (x: i32, y: i32) => {
+  x + y
+}
+pub let add = (x: i32, y: i32) => x + y
+pub let add = (x: i32, y: i32) -> i32 => {
+  x + y
+}
+pub let add = (x: i32, y: i32) -> i32 => x + y
+pub let filter = <T>(array: &Array<T>, predicate: (entry: T) -> bool) -> Array<T> => {
+  let result = []
+  array.foreach(e => {
+    if (filter(e)) result.push(e)
+  })
+  result
+}
+```
 
 ```just
 // arrow function style

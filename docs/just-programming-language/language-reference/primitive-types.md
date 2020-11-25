@@ -1,4 +1,14 @@
-# Number Literals
+# Primitive Types
+
+## The Boolean Type
+
+The Boolean type in `just` is specified as `bool`.
+The values are `true` and `false`.
+
+```just file=./boolean.just
+```
+
+## Number Literals
 
 Numbers are inferred as `int`, `uint` or `float` by default.
 
