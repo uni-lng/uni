@@ -1,11 +1,15 @@
-cosnt closure = () {
-  let state = 1
-  const dec = () => state--
-  return {
-    inc = () => {
-      state++
-    }
-  }
+
+use std::path;
+use std::env;
+use std::fs;
+
+pub fn main() {
+  let args = env::args().collect();
+  let dir = &args[1];
+  compile(&dir);
 }
 
-pub const main = () => "Hello, World"
+fn compile(dir: &str) {
+  let p = path::Path::new(dir);
+  let x = fs::read_dir(p);
+}

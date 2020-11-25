@@ -1,14 +1,9 @@
 [package]
-name = 'lib_just_fs'
+name = 'just_std_io'
 version = '0.1.0'
 authors = ['Homa Wong <homawong@gmail.com>']
 edition = '2018'
 
 [dependencies]
-anyhow = '1'
-path-slash = '0'
-
-[dependencies.lib_just_core]
-path = '../lib_just_core'
 
 [dev-dependencies]

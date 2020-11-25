@@ -1,9 +1,11 @@
 [package]
-name = 'lib_just_core'
+name = 'just_std_fs'
 version = '0.1.0'
 authors = ['Homa Wong <homawong@gmail.com>']
 edition = '2018'
 
 [dependencies]
+anyhow = '1'
+path-slash = '0'
 
 [dev-dependencies]
