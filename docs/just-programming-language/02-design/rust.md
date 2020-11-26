@@ -2,10 +2,10 @@
 
 Here are the pros and cons of `Rust`:
 
-|                    |                                                                 |
-| ------------------ | --------------------------------------------------------------- |
+|                     |                                                                 |
+| ------------------- | --------------------------------------------------------------- |
 | 👍 ownership system | this is a paradigm shifting killer feature                      |
-| 👍 efficient        | produce highly performant binary                               |
+| 👍 efficient        | produce highly performant binary                                |
 | 😐 macro            | while it makes certain task easier, also complicates the system |
 | 👎 nominal type     | a huge limitation in component design                           |
 

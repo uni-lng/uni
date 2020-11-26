@@ -30,13 +30,13 @@ In general, Uni has the following characteristics:
 
 - statically type with strong type inference
   - type inference is the solution to the "static vs dynamic" debate.
-  - Uni aims to only require type declaration at function parameters.\
+  - Uni aims to only require type declaration at function parameters.\\
     Everything else can be type inferred.
   - Haskell, TypeScript, Rust, and Go have type inference in various degrees.
 - structural type
   - nominal type has a few significant drawbacks:
     - create an inverted coupling between the producer and consumer.
-      - this is the biggest problem of all.\
+      - this is the biggest problem of all.\\
         Marking the application architecture rigit or very tedious to develop and maintain.
     - make the program unnecessary verbose and fill with needless type casts.
   - It is much easier to create a nominal type language vs a structural type language.

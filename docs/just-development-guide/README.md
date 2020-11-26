@@ -1,6 +1,6 @@
 # Just Development Guide
 
-Welcome to *Just Development Guide*.
+Welcome to _Just Development Guide_.
 
 This guide is meant to help new contributors to get involved in developing various aspect of the `Just` ecosystem,
 including the compiler, language tools, and standard libraries.

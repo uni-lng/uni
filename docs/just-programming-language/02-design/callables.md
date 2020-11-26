@@ -20,8 +20,6 @@ To define a **function**, you use the **fat arrow** syntax:
 ([<ctx>|]<params>) => <statement>
 ```
 
-
-
 [1, 'a'].forEach(x => x) // x: int | char
 const plusOne = &ctx => ctx.x + 1 // ctx: inferred, automatical reference resolution
 

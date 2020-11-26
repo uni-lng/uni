@@ -6,6 +6,8 @@ The Boolean type in `just` is specified as `bool`.
 The values are `true` and `false`.
 
 ```just file=./boolean.just
+let t = true;
+let f: bool = false;
 ```
 
 ## Number Literals

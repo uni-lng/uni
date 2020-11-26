@@ -1,7 +1,7 @@
 # TypeScript
 
-|                                     |                                                         |
-| ----------------------------------- | ------------------------------------------------------- |
+|                                      |                                                         |
+| ------------------------------------ | ------------------------------------------------------- |
 | 👍 gradual type                      | allows variable type to be inferred or dynamic          |
 | 👍 structural type                   | type equivalency is determined by shape instead of name |
 | 👎 unsound type                      | there are holes and pitfalls in the type system         |
