@@ -12,12 +12,6 @@
 
 These types hold the data within their own memory allocation. i.e. they are stored in the stack.
 
-Other value types to consider:
-
-- `v128`:
-  - [in AssemblyScript](https://www.assemblyscript.org/types.html#types)
-  - [SIMD](https://en.wikipedia.org/wiki/SIMD)
-
 ### Boolean Type
 
 The most basic value type is the simple `true` / `false` value.
@@ -107,11 +101,7 @@ Unicode Scalar Values range from `U+0000` to `U+D7FF` and `U+E000` to `U+10FFFF`
 
 Like most other languages, `char` is enclosed within single-quotes.
 
-### Symbol Type
-
-Building block of branded? nominal type.
-
-## Reference Type
+## Reference Types
 
 ## Literal Types
 
