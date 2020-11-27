@@ -1,32 +1,40 @@
 # Just [Code]
 
-`Just` is a general purpose programming language.
+`just` a general purpose programming language.
 
 Key highlights:
 
-- compile to native assembly, no runtime or garbage collector
-- statically typed with native support of structural and nominal type
-- complete type-level programming
-- tool first, with battery included
+- statically typed, with support of type inference and type union.
+- strongly typed, with support of implicit and explicit type narrowing.
+- structurally typed, while nominal type is also supported.
+- built for class-less object oriented programming
+- built for functional programming
+- secure by default
+- compile to native assembly, no VM or garbage collection.
+- complete type-level programming.
+- tool first, with battery included.
+
+## Milestones
+
+- 🚧 High level language design
+- 🚧 Define language syntax
+- ⌛️ `just_std_io` in `rust`
+- ⌛️ `just_std_fs` in `rust`
+- ⌛️ `stage-0` compiler in `rust`
+- ⌛️ `stage-1` compiler in `just`
+- ⌛️ `just_std_*` libraries
+- ⌛️ `just_compiler`
+- ⌛️ `just_test`
+- ⌛️ `just_package_manager`
+- ⌛️ `just` all-in-one cli tool
+- ⌛️ `just_language_service`
+- ⌛️ `just_language_server`
+- ⌛️ `just_vscode_plugin`
+- ⌛️ `just_lint`
+- ⌛️ `just_doc`
+- ⌛️ `just_interpreter`
 
 It is heavily influenced by Rust and TypeScript.
-
-## Design Goals
-
-If I have to summarize Uni with minimum words,
-it would be "A structural typed Rust".
-
-Rust gets a lot of things right.
-Its ownership concept makes so much sense that makes you wonder why other languages have garbage collection.
-It also have a very powerful macro allows you to make the language much easier to write.
-
-But nominal type is its most glaring shortcoming.
-It makes the code unnecessary cumbersome and creates difficult roadblocks when it comes to design and architecture.
-
-Uni is targeted to be a system level language just like Rust,
-but it also focus of tooling support and syntax purity.
-
-In general, Uni has the following characteristics:
 
 - statically type with strong type inference
   - type inference is the solution to the "static vs dynamic" debate.
