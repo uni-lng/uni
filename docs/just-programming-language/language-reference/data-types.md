@@ -25,8 +25,8 @@ The most basic value type is the simple `true` / `false` value.
 It is specified as `bool`.
 
 ```just file=./bool.just
-let mut t = true;
-let mut f: bool = false;
+let t = true;
+let f: bool = false;
 ```
 
 ### Integer Types
@@ -66,7 +66,7 @@ Byte representations are always `u8`.
 Decimal, hex, octal, and binary type are automatically expended if the literal cannot be fit in 32 bits.
 Also, they can be specified using algebra:
 
-```just
+```just file=./int.just
 let mut mb = 8 * 1024 * 1024
 let mut gb = 2^33
 ```
@@ -74,7 +74,7 @@ let mut gb = 2^33
 Since specifying integer types is very common in systems-level programming,
 you can specify the type by adding a type suffix to the literal:
 
-```just
+```just file=./uint.just
 let mut x = 57u64  // `x: u64`
 let mut y = 0x01u8 // `y: u8`
 ```
@@ -91,7 +91,7 @@ The `f32` type is a single-precision float, and `f64` has double precision.
 
 The same syntax for integer applies to floating-point types:
 
-```just
+```just file=./float.just
 let mut f1 = 1_000.123_456
 let mut f2 = 0.1f64
 let mut f3 = -1.23e-8f64
@@ -120,7 +120,7 @@ Boolean, integer, floating-point, character, and string are example of literals.
 
 Literal types refer to the concrete type of a specific literal.
 
-```just
+```just file=./literal.just
 let t: true = true
 let n: 1 = 1
 let c: 'a' = 'a'
@@ -136,7 +136,7 @@ the narrower literal type is used as the default.
 Since `let mut x = <literal>` is mutable,
 the wider type is used as the default.
 
-```just
+```just file=./literal-let-vs-mut.just
 let a = 1 // `a: 1`
 let mul b = 1 // `b: i32`
 ```
@@ -144,7 +144,7 @@ let mul b = 1 // `b: i32`
 For similar reason,
 function params with default uses the wider type.
 
-```just
+```just file=./literal-param-with-default.just
 let foo = (x = 1 /* `x: i32` */) => {
   /* -snip- */
 }
