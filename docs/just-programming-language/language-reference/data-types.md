@@ -25,8 +25,8 @@ The most basic value type is the simple `true` / `false` value.
 It is specified as `bool`.
 
 ```just file=./bool.just
-let t = true;
-let f: bool = false;
+let mut t = true;
+let mut f: bool = false;
 ```
 
 ### Integer Types
@@ -67,16 +67,16 @@ Decimal, hex, octal, and binary type are automatically expended if the literal c
 Also, they can be specified using algebra:
 
 ```just
-let mb = 8 * 1024 * 1024
-let gb = 2^33
+let mut mb = 8 * 1024 * 1024
+let mut gb = 2^33
 ```
 
 Since specifying integer types is very common in systems-level programming,
 you can specify the type by adding a type suffix to the literal:
 
 ```just
-let x = 57u64  // `x: u64`
-let y = 0x01u8 // `y: u8`
+let mut x = 57u64  // `x: u64`
+let mut y = 0x01u8 // `y: u8`
 ```
 
 You can also use `_` as a visual separator, such as `1_000`.
@@ -92,12 +92,12 @@ The `f32` type is a single-precision float, and `f64` has double precision.
 The same syntax for integer applies to floating-point types:
 
 ```just
-let f1 = 1_000.123_456
-let f2 = 0.1f64
-let f3 = -1.23e-8f64
-let f4 = 0.1
-let f5 = 0.0
-let f6 = 2.
+let mut f1 = 1_000.123_456
+let mut f2 = 0.1f64
+let mut f3 = -1.23e-8f64
+let mut f4 = 0.1
+let mut f5 = 0.0
+let mut f6 = 2.
 ```
 
 ### Character Type
@@ -107,6 +107,47 @@ Unicode Scalar Values range from `U+0000` to `U+D7FF` and `U+E000` to `U+10FFFF`
 
 Like most other languages, `char` is enclosed within single-quotes.
 
+### Symbol Type
+
+Building block of branded? nominal type.
+
 ## Reference Type
 
 ## Literal Types
+
+A literal refers to a value that can be represented in the code without additional processing.
+Boolean, integer, floating-point, character, and string are example of literals.
+
+Literal types refer to the concrete type of a specific literal.
+
+```just
+let t: true = true
+let n: 1 = 1
+let c: 'a' = 'a'
+let s: "foo" = "foo"
+```
+
+The literal types is a sub-type of their respective types.
+e.g. `true` is a sub-type of `bool`, and `3` is a sub-type of `u8`, `i8`, `u16`, `i16`, and so on.
+
+Since `let x = <literal>` is immutable,
+the narrower literal type is used as the default.
+
+Since `let mut x = <literal>` is mutable,
+the wider type is used as the default.
+
+```just
+let a = 1 // `a: 1`
+let mul b = 1 // `b: i32`
+```
+
+For similar reason,
+function params with default uses the wider type.
+
+```just
+let foo = (x = 1 /* `x: i32` */) => {
+  /* -snip- */
+}
+```
+
+You can override this behavior by type annotation.
