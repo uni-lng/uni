@@ -1,6 +1,6 @@
 # Just [Code]
 
-`just` a general purpose programming language.
+`Just` a general purpose programming language.
 
 Key highlights:
 
@@ -34,7 +34,8 @@ Key highlights:
 - ⌛️ `just_doc`
 - ⌛️ `just_interpreter`
 
-It is heavily influenced by Rust and TypeScript.
+`Just` is influenced by multiple programming languages,
+most notably `Rust`, `TypeScript`, and `AssemblyScript`.
 
 - statically type with strong type inference
   - type inference is the solution to the "static vs dynamic" debate.
