@@ -19,24 +19,24 @@ it is important to make it clear about what they really are and where they fall 
 
 Here is a short description for all terms involved:
 
-| Term                  | Description                                                                  |
-| --------------------- | ---------------------------------------------------------------------------- |
-| Identifier            | Tokens which name the language entities.                                     |
-|                       | i.e. name of variable, parameter, function, package, etc.                    |
-| Run time              | When the program is executed.                                                |
-| Runtime               | The time and space where the program is executing on.                        |
-| Compile Time          | When the source code of a program is being compiled.                         |
-|                       | It loosely include other processes that need to analyze the source code      |
-|                       | in some form such as linting and validation on editors.                      |
-| Static Typing         | The ability to **declare** the type of an **identifier** in the source code. |
-|                       | a.k.a. **Type Declaration**                                                  |
-| Static Type           | Type that are defined explicitly in source code                              |
-|                       | and can be resolved at **compile time**.                                     |
-| Dynamic Type          | Type that can only be resolved at **run time**.                              |
-| Inferred Type         | Type that are inferred at **compile time**.                                  |
-| Type Inference        | The ability to (and the process of) inferring types at **compile time**.     |
-| Static Type Checking  | **Compile time** type checking to verify the type safety of a program.       |
-| Dynamic Type Checking | **Runtime** type checking to differentiate types.                            |
+| Term                  | Description                                                                   |
+| --------------------- | ----------------------------------------------------------------------------- |
+| Identifier            | Tokens which name the language entities.                                      |
+|                       | i.e. name of variable, parameter, function, package, etc.                     |
+| Run time              | When the program is executed.                                                 |
+| Runtime               | The time and space where the program is executing on.                         |
+| Compile Time          | When the source code of a program is being compiled.                          |
+|                       | It loosely include other processes that need to analyze the source code       |
+|                       | in some form such as linting and validation on editors.                       |
+| Static Typing         | The ability to **annotate** the type of an **identifier** in the source code. |
+|                       | a.k.a. **Type Annotation**                                                    |
+| Static Type           | Type that are defined explicitly in source code                               |
+|                       | and can be resolved at **compile time**.                                      |
+| Dynamic Type          | Type that can only be resolved at **run time**.                               |
+| Inferred Type         | Type that are inferred at **compile time**.                                   |
+| Type Inference        | The ability to (and the process of) inferring types at **compile time**.      |
+| Static Type Checking  | **Compile time** type checking to verify the type safety of a program.        |
+| Dynamic Type Checking | **Runtime** type checking to differentiate types.                             |
 
 Given these terms, we can define:
 
@@ -51,7 +51,7 @@ at the same time it provides the necessary premise to determine if a language is
 
 For example, under these definitions,
 PHP 7 is still a dynamically typed language.
-While you can define parameter type:
+While you can annotate parameter type:
 
 ```php
 function foo(string $value) {
@@ -59,7 +59,7 @@ function foo(string $value) {
 }
 ```
 
-You cannot define **variable** type:
+You cannot annotate **variable** type:
 
 ```php
 string $abc; // this is not valid PHP
@@ -85,7 +85,7 @@ not how the code can be processed.
 
 `just` is a **statically typed language** with **dynamic type** support.
 
-**Type declaration**  is optional as long as the type can be inferred.
+**Type annotation**  is optional as long as the type can be inferred.
 
 This mean the following are valid:
 
