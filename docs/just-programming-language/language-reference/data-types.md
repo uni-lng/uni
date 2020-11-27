@@ -35,11 +35,11 @@ It can be signed or unsigned, and take up specific amount of space.
 | 32-bit  | i32    | u32      |
 | 64-bit  | i64    | u64      |
 | 128-bit | i128   | u128     |
-| varies  | int    | uint     |
+| varies  | isize  | usize    |
 
 Signed integers are stored using two's complement representation.
 
-The size of `int` and `uint` depends on the binary is built for 32-bit or 64-bit architecture.
+The size of `isize` and `usize` depends on the binary is built for 32-bit or 64-bit architecture.
 
 You can write integer literals in multiple ways.
 
