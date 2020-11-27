@@ -103,7 +103,9 @@ let f6 = 2.
 ### Character Type
 
 `Just` `char` is a four bytes Unicode Scalar Value.
-Unicode Scalar Values range from U+0000 to U+D7FF and U+E000 to U+10FFFF inclusive.
+Unicode Scalar Values range from `U+0000` to `U+D7FF` and `U+E000` to `U+10FFFF` inclusive.
+
+Like most other languages, `char` is enclosed within single-quotes.
 
 ## Reference Type
 
