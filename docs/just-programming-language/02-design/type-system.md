@@ -14,7 +14,7 @@ However, if you do a quick search you will find that there are still some confus
 - <https://hackernoon.com/i-finally-understand-static-vs-dynamic-typing-and-you-will-too-ad0c2bd0acc7>
 - <https://stackoverflow.com/questions/1517582/what-is-the-difference-between-statically-typed-and-dynamically-typed-languages>
 
-In order to have a meaningful description of the type system in `just` with respect to `static` and `dynamic` typing,
+In order to have a meaningful description of the type system in *just* with respect to `static` and `dynamic` typing,
 it is important to make it clear about what they really are and where they fall short.
 
 Here is a short description for all terms involved:
@@ -83,7 +83,7 @@ does the language becomes a statically typed language?
 The key take away is that the language is static or dynamic is depend on how the code can be written,
 not how the code can be processed.
 
-`just` is a **statically typed language** with **dynamic type** support.
+*just* is a **statically typed language** with **dynamic type** support.
 
 **Type annotation**  is optional as long as the type can be inferred.
 
@@ -117,7 +117,7 @@ if (typeof x === 'string') {
 
 ## Structural vs Nominal
 
-`Just` supports both `nominal` and `structural` type out of the box.
+*Just* supports both `nominal` and `structural` type out of the box.
 All types are `structural` by default.
 
 To declare a `nominal` type, use the `nominal` decorator:

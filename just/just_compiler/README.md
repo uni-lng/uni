@@ -1,6 +1,6 @@
 # justc
 
-`Just` Compiler.
+*Just* Compiler.
 
 ## Responsibilities
 

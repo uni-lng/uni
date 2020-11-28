@@ -1,6 +1,6 @@
 # Just [Code]
 
-`Just` a general purpose programming language.
+*Just* a general purpose programming language.
 
 Key highlights:
 
@@ -21,12 +21,12 @@ Key highlights:
 - ⌛️ `just_std_io` in `rust`
 - ⌛️ `just_std_fs` in `rust`
 - ⌛️ `stage-0` compiler in `rust`
-- ⌛️ `stage-1` compiler in `just`
+- ⌛️ `stage-1` compiler in *just*
 - ⌛️ `just_std_*` libraries
 - ⌛️ `just_compiler`
 - ⌛️ `just_test`
 - ⌛️ `just_package_manager`
-- ⌛️ `just` all-in-one cli tool
+- ⌛️ *just* all-in-one cli tool
 - ⌛️ `just_language_service`
 - ⌛️ `just_language_server`
 - ⌛️ `just_vscode_plugin`
@@ -34,7 +34,7 @@ Key highlights:
 - ⌛️ `just_doc`
 - ⌛️ `just_interpreter`
 
-`Just` is influenced by multiple programming languages,
+*Just* is influenced by multiple programming languages,
 most notably `Rust`, `TypeScript`, and `AssemblyScript`.
 
 - statically type with strong type inference
@@ -66,7 +66,7 @@ Traits it gets from TypeScript:
 - syntax in TypeScript and JavaScript
   - generics
 
-Traits unique to `Just`:
+Traits unique to *Just*:
 
 - set theory type composition
 - explicit syntax enables strong IDE support

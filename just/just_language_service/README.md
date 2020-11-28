@@ -2,7 +2,7 @@
 
 `Just Language Service` (JLS) is a service that runs in the background that
 
-It run agains a `Just` workspace,
+It run agains a *Just* workspace,
 and provide information to IDEs, compiler, and other tools.
 
 It

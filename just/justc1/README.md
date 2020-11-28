@@ -1,6 +1,6 @@
 # justc1
 
-Stage 1 compiler of `Just`.
+Stage 1 compiler of *Just*.
 
 This compiler is self-contained.
 It does not have any external dependency.

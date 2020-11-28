@@ -11,7 +11,7 @@
 
 `structual` type is superior than `nominal` type in many ways.
 
-`Just` supports both `nominal` and `structural` type out of the box.
+*Just* supports both `nominal` and `structural` type out of the box.
 All types are `structural` by default.
 
 ## Unsound type

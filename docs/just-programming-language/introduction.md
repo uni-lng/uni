@@ -1,3 +1,3 @@
 # Introduction
 
-`Just` is a general purpose programming language.
+*Just* is a general purpose programming language.

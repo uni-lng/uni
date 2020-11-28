@@ -1,20 +1,25 @@
 # Data Types
 
-`just` has three classes of data types:
+There are two kinds of data types in *just*: **value types** and **reference types**.
 
-- **value types**: a class of types that represent a single **native** value.
-- **reference types**: a class of types that represent a **complex** value.
-- **literal types**: a class of types that represent a specific literal.
+Like most other languages,
+**value types** hold the data within their own memory allocation,
+and they are stored directly in the stack during function calls,
+while **reference types** hold a pointer which points to the actual data stored in heap.
 
-## Value Types
+*just* has three classes of value types:
 
-`just` has four kinds of value types: boolean, integers, floating-points, and character.
+- **singular types**: a class of types that represent a single **native** value.
+- **literal types**: a class of types that represent a specific **literal**.
+- **collection types**: a class of types that represent a fixed-size collection of values.
 
-These types hold the data within their own memory allocation. i.e. they are stored in the stack.
+## Singular Types
+
+*just* has four kinds of singular types: boolean, integers, floating-points, and character.
 
 ### Boolean Type
 
-The most basic value type is the simple `true` / `false` value.
+The most basic singular type is the simple `true` / `false` value.
 
 It is specified as `bool`.
 
@@ -65,7 +70,7 @@ let mut mb = 8 * 1024 * 1024
 let mut gb = 2^33
 ```
 
-Since specifying integer types is very common in systems-level programming,
+Since specifying integer types is very common in systems programming,
 you can specify the type by adding a type suffix to the literal:
 
 ```just file=./uint.just
@@ -78,7 +83,7 @@ You can also use `_` as a visual separator, such as `1_000`.
 ### Floating-Point Types
 
 A floating-point is a number with decimal points.
-`Just` has two floating-point types: `f32` and `f64`.
+*Just* has two floating-point types: `f32` and `f64`.
 
 Floating-point numbers are represented according to the [IEEE-754 standard](https://en.wikipedia.org/wiki/IEEE_754).
 The `f32` type is a single-precision float, and `f64` has double precision.
@@ -88,7 +93,7 @@ The same syntax for integer applies to floating-point types:
 ```just file=./float.just
 let mut f1 = 1_000.123_456
 let mut f2 = 0.1f64
-let mut f3 = -1.23e-8f64
+let mut f3 = -1.23e-8_f64
 let mut f4 = 0.1
 let mut f5 = 0.0
 let mut f6 = 2.
@@ -96,12 +101,10 @@ let mut f6 = 2.
 
 ### Character Type
 
-`Just` `char` is a four bytes Unicode Scalar Value.
+*Just* `char` is a four bytes Unicode Scalar Value.
 Unicode Scalar Values range from `U+0000` to `U+D7FF` and `U+E000` to `U+10FFFF` inclusive.
 
 Like most other languages, `char` is enclosed within single-quotes.
-
-## Reference Types
 
 ## Literal Types
 
@@ -141,3 +144,72 @@ let foo = (x = 1 /* `x: i32` */) => {
 ```
 
 You can override this behavior by type annotation.
+
+## Collection Types
+
+Collection types are data types that groups multiple values into a single type.
+
+Since they are value types, their data are stored directly in the stack during function calls.
+
+This make them more suitable in passing data between function calls when the data is small.
+
+However, if the data is large or consist of a lot of elements,
+it will negatively impact performance.
+
+*Just* has two collection types: `array` and `tuple`.
+
+### Array Type
+
+The `array` type is a fixed-size, homogeneous collection.
+
+This means every element of an array must have the same type.
+
+```just file=./array.just
+let a: [i32; 3] = [1, 2, 3];
+```
+
+`Just` will infer a variable to `array` type if they satisfy these criteria.
+
+```just
+let a = [1, 2, 3, 4, 5] // `a: [i32; 5]`
+```
+
+You can also initialize an array with the same value in every element:
+
+```just
+let a = [3; 5]; // same as [3, 3, 3, 3, 3]
+```
+
+You can access array element using indexing:
+
+```just
+let a = [1, 2, 3];
+
+let first = a[0];
+```
+
+### Tuple Type
+
+The `tuple` type is a fixed-size, heterogeneous collection.
+
+This mean some elements in the collection has different types than others.
+
+The way to initialize a `tuple` is the same as `array`:
+
+```just file=./tuple.just
+let t = [1, 2, 'a']; // `t: [i32, i32, char]`
+```
+
+You can specify the type of each element explicitly:
+
+```just file=./tuple-explicit.just
+let t: [i32, u32, char] = [1, 2, 'a'];
+```
+
+`tuple` also support the same `array` type syntax:
+
+```just file=./tuple-with-array.just
+let t:[char, i32; 3, bool] = ['a', 1, 2, 3, true];
+```
+
+## Reference Types

@@ -1,10 +1,10 @@
 # unic0
 
-`justc0` is a stage 0 `Just` compiler written in `Rust`.
+`justc0` is a stage 0 *Just* compiler written in `Rust`.
 
-It is used to build `justc1`, the stage 1 `Just` compiler.
+It is used to build `justc1`, the stage 1 *Just* compiler.
 
-In order to spend more time dogfooding in `Just` directly,
+In order to spend more time dogfooding in *Just* directly,
 some design and language features are skipped:
 
 - no support to compile a single file
