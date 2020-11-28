@@ -1,3 +1,5 @@
+use super::token_kind::TokenKind;
+
 /**
  * Parsed Token.
  * It doesn't contain information about data that has been parsed,
@@ -6,5 +8,5 @@
  */
 pub struct Token {
   pub kind: TokenKind,
-  pub len: usize
+  pub len: usize,
 }

@@ -1,4 +1,4 @@
-use crate::literal_kind::LiteralKind;
+use super::literal_kind::LiteralKind;
 
 /// Enum representing common lexeme types.
 #[derive(Clone, Copy, Debug, PartialEq, Eq, PartialOrd, Ord)]
