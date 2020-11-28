@@ -1,3 +1,1 @@
-pub fn greet(name: &str) {
-  return `hello ${name}`
-}
+pub let greet = (name: &str) => `hello ${name}`
