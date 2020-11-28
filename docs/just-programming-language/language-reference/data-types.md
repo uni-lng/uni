@@ -216,7 +216,7 @@ let t: [char, i32; 3, bool] = ['a', 1, 2, 3, true];
 
 **Reference types** contain a pointer to another memory location that holds the data.
 
-*Just* has three kinds of reference types: `function`, `struct`, and `slice`.
+*Just* has three kinds of reference types: `function`, `custom`, and `slice`.
 
 ### Function Type
 
@@ -258,6 +258,20 @@ The data and references captured in the `closure` is stored as the `context` of 
 
 We will talk about `closure` in more detail in the future.
 
-### Struct Type
+### Custom Type
+
+The custom type is the way to compose complex types in *just*.
+
+The `type` keyword is used to define a custom type:
+
+```just file=./type.just
+type Vocaloid = {
+  name: String,
+  age: uint
+}
+```
+
+The syntax is very similar to those in *TypeScript*.
+I'll add more detail in the future.
 
 ### Slice Type
