@@ -2,4 +2,4 @@
 
 *just* Standard IO Library.
 
-It uses `std::io` from `rust`.
+It uses `std::io` from *rust*.

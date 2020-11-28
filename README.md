@@ -18,15 +18,15 @@ Key highlights:
 
 - 🚧 High level language design
 - 🚧 Define language syntax
-- ⌛️ `just_std_io` in `rust`
-- ⌛️ `just_std_fs` in `rust`
-- ⌛️ `stage-0` compiler in `rust`
+- ⌛️ `just_std_io` in *rust*
+- ⌛️ `just_std_fs` in *rust*
+- ⌛️ `stage-0` compiler in *rust*
 - ⌛️ `stage-1` compiler in *just*
 - ⌛️ `just_std_*` libraries
 - ⌛️ `just_compiler`
 - ⌛️ `just_test`
 - ⌛️ `just_package_manager`
-- ⌛️ *just* all-in-one cli tool
+- ⌛️ `just` all-in-one cli tool
 - ⌛️ `just_language_service`
 - ⌛️ `just_language_server`
 - ⌛️ `just_vscode_plugin`

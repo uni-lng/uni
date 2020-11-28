@@ -2,4 +2,4 @@
 
 *just* Standard File System Library.
 
-It uses `std::fs` from `rust`.
+It uses `std::fs` from *rust*.
