@@ -36,6 +36,7 @@
   },
   "remarkConfig": {
     "settings": {
+      "emphasis": "*",
       "listItemIndent": "1",
       "rule": "-",
       "ruleSpaces": false

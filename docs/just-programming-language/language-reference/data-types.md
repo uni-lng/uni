@@ -209,7 +209,55 @@ let t: [i32, u32, char] = [1, 2, 'a'];
 `tuple` also support the same `array` type syntax:
 
 ```just file=./tuple-with-array.just
-let t:[char, i32; 3, bool] = ['a', 1, 2, 3, true];
+let t: [char, i32; 3, bool] = ['a', 1, 2, 3, true];
 ```
 
 ## Reference Types
+
+**Reference types** contain a pointer to another memory location that holds the data.
+
+*Just* has three kinds of reference types: `function`, `struct`, and `slice`.
+
+### Function Type
+
+`Function` is a fundamental type in any programming language.
+
+In *just*, `function` is a first-class type like other value and reference types.
+
+A `function` is defined using the fat-arrow syntax:
+
+```just file=./function.just
+let foo = () => "foo"
+let incIfOdd = (v: i32) => {
+  if (v % 2) {
+    v
+  } else {
+    v + 1
+  }
+}
+```
+
+The last expression will be used as the return value.
+If the function will not return anything, use `;` to end the expression:
+
+```just file=./function-no-return.just
+let echo = (v: bool) => io.write(v);
+```
+
+Note that `;` is applied to the function body in the above example, not the `let` statement.
+
+The return type of the function is inferred automatically.
+You can annotate the return type explicitly using the thin-arrow syntax:
+
+```just file=./function-explicit-return-type.just
+let inc = (v: i32) -> i32 => v + 1
+```
+
+When a `function` is defined, a `closure` is created to capture any environment it tries to access.
+The data and references captured in the `closure` is stored as the `context` of the `function`.
+
+We will talk about `closure` in more detail in the future.
+
+### Struct Type
+
+### Slice Type
