@@ -1,12 +1,11 @@
 [package]
-name = 'justc0'
+name = 'justc'
 version = '0.1.0'
 authors = ['Homa Wong <homawong@gmail.com>']
 edition = '2018'
-
-[dependencies]
 
 [dev-dependencies]
 assert_cmd = '^1'
 predicates = '^1'
 galvanic-assert = '^0'
+expect-test = "1.0"

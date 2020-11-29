@@ -1,6 +1,10 @@
 {
   "cSpell.words": [
+    "LLVM",
     "Unvalidated",
+    "justc",
+    "librustc",
+    "rustc",
     "waitlist"
   ]
 }
