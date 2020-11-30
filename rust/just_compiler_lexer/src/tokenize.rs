@@ -24,7 +24,7 @@ pub fn tokenize(mut input: &str) -> impl Iterator<Item = Token> + '_ {
     }
     let token = Token {
       kind: Whitespace,
-      len: 1,
+      len: 1
     };
     input = &input[token.len..];
     return Some(token);
