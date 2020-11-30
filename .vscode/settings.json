@@ -1,12 +1,15 @@
 {
   "cSpell.words": [
+    "Bidi",
     "LLVM",
     "Unvalidated",
     "commitlint",
+    "idents",
     "justc",
     "librustc",
     "multimethod",
     "rustc",
+    "rustrun",
     "typeahead",
     "waitlist"
   ]
