@@ -1,4 +1,5 @@
 [workspace]
 members = [
-  "rust/just_compiler_lexer"
+  "rust/just_compiler_lexer",
+  "rust/just_std_core"
 ]

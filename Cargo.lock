@@ -17,6 +17,10 @@ dependencies = [
 ]
 
 [[package]]
+name = "just_std_core"
+version = "0.1.0"
+
+[[package]]
 name = "justc_lexer"
 version = "0.1.0"
 dependencies = [
