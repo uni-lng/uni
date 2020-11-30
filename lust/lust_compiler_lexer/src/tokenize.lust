@@ -1,0 +1,12 @@
+(import (
+  std.str
+  std.iter
+  std.slice.isEmpty
+))
+(export (
+  let tokenize (input: &str) (
+    if (isEmpty input)
+      iter.empty
+      nil
+  ): iter<Token>
+))
